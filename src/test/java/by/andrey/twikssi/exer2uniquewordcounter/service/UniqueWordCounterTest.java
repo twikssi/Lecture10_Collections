@@ -54,11 +54,12 @@ public class UniqueWordCounterTest {
         word.addWord("Hi");
         word.addWord("Hi");
         word.addWord("Hi, how are you?");
+        word.addWord("Hi, how are you?");
         word.addWord("Hi");
         word.addWord("Along");
         String frequentWord = word.getMostFrequentWord();
 
-        assertEquals("",frequentWord);
+        assertEquals("Hi, how are you?",frequentWord);
     }
 
     @Test

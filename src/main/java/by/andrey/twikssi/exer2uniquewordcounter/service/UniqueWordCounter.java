@@ -11,7 +11,7 @@ public class UniqueWordCounter {
     public static final Logger log = LoggerFactory.getLogger(UniqueWordCounter.class);
 
     public UniqueWordCounter() {
-        this.map = new HashMap<String, Integer>();
+        this.map = new HashMap<>();
     }
 
     public Map<String, Integer> getMap() {
@@ -31,10 +31,10 @@ public class UniqueWordCounter {
     public String getMostFrequentWord(){
         int counter = 0;
         String frequentWord = "";
-        for (Map.Entry<String, Integer> map : map.entrySet()) {
-            if(map.getValue() > counter){
-                counter = map.getValue();
-                frequentWord = map.getKey();
+        for (Map.Entry<String, Integer> uniq : map.entrySet()) {
+            if(uniq.getValue() > counter){
+                counter = uniq.getValue();
+                frequentWord = uniq.getKey();
             }
         }
         return frequentWord;
@@ -48,6 +48,7 @@ public class UniqueWordCounter {
     }
 
     public void printWordsFrequency(){
-        log.info(toString());
+        String text = toString();
+        log.info(text);
     }
 }
