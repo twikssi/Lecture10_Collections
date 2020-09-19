@@ -42,4 +42,25 @@ public class UniqueWordCounterTest {
 
         assertEquals(1, expected);
     }
+
+    @Test
+    public void getMostFrequentWord(){
+        word.addWord("Hi, how are you?");
+        word.addWord("Hi, how are you?");
+        word.addWord("Hi, how are you?");
+        word.addWord("Hi");
+        word.addWord("Hi, how are you?");
+        word.addWord("Hi");
+        word.addWord("Hi");
+        word.addWord("Hi");
+        word.addWord("Hi, how are you?");
+        word.addWord("Hi");
+        word.addWord("Along");
+
+
+        String frequentWord = word.getMostFrequentWord();
+
+        assertEquals("",frequentWord);
+
+    }
 }

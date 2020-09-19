@@ -23,4 +23,16 @@ public class UniqueWordCounter {
             map.put(word,1);
         }
     }
+
+    public String getMostFrequentWord(){
+        int counter = 0;
+        String frequentWord = "";
+        for (Map.Entry<String, Integer> map : map.entrySet()) {
+            if(map.getValue() > counter){
+                counter = map.getValue();
+                frequentWord = map.getKey();
+            }
+        }
+        return frequentWord;
+    }
 }
