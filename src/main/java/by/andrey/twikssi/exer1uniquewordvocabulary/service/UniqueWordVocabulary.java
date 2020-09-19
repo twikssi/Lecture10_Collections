@@ -11,10 +11,14 @@ public class UniqueWordVocabulary {
     }
 
     public UniqueWordVocabulary() {
-        this.set = new HashSet();
+        this.set = new HashSet<>();
     }
 
     public void addWord(String word) {
-        set.add(word);
+        if (word != null) {
+            if(!(word.equals(""))){
+                set.add(word);
+            }
+        }
     }
 }
