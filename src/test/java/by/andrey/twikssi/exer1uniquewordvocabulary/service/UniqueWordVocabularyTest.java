@@ -11,6 +11,8 @@ public class UniqueWordVocabularyTest {
         UniqueWordVocabulary uniqueWordVocabulary = new UniqueWordVocabulary();
         String word = "Peter";
         uniqueWordVocabulary.addWord(word);
+
+
     }
 
 }
