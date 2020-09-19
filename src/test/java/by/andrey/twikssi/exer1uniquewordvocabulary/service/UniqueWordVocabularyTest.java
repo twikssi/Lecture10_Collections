@@ -44,4 +44,31 @@ public class UniqueWordVocabularyTest {
         assertEquals(true, uniqueWordVocabulary.getSet() == null);
     }
 
+    @Test
+    public void getWordsCount(){
+        UniqueWordVocabulary uniqueWordVocabulary = new UniqueWordVocabulary();
+        String word = "Peter hi what`s up";
+        uniqueWordVocabulary.addWord(word);
+
+        assertEquals(4,uniqueWordVocabulary.getWorsCount());
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void getWordsCountReturnNull(){
+        UniqueWordVocabulary uniqueWordVocabulary = new UniqueWordVocabulary();
+        String word = "";
+        uniqueWordVocabulary.addWord(word);
+        uniqueWordVocabulary.getWorsCount();
+    }
+
+    @Test
+    public void toStringTest(){
+        UniqueWordVocabulary uniqueWordVocabulary = new UniqueWordVocabulary();
+        String word = "Peter hi what`s up";
+        uniqueWordVocabulary.addWord(word);
+        uniqueWordVocabulary.printVocabulary();
+
+        assertEquals("UniqueWordVocabulary{set=[hi, Peter, up, what`s]}",uniqueWordVocabulary.toString());
+
+    }
 }
