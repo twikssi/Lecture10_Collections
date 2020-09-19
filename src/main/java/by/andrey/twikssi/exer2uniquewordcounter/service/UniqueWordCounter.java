@@ -1,10 +1,14 @@
 package by.andrey.twikssi.exer2uniquewordcounter.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class UniqueWordCounter {
     Map<String, Integer> map;
+    public static final Logger log = LoggerFactory.getLogger(UniqueWordCounter.class);
 
     public UniqueWordCounter() {
         this.map = new HashMap<String, Integer>();
@@ -34,5 +38,16 @@ public class UniqueWordCounter {
             }
         }
         return frequentWord;
+    }
+
+    @Override
+    public String toString() {
+        return "UniqueWordCounter{" +
+                "map=" + map +
+                '}';
+    }
+
+    public void printWordsFrequency(){
+        log.info(toString());
     }
 }

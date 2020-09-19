@@ -56,11 +56,26 @@ public class UniqueWordCounterTest {
         word.addWord("Hi, how are you?");
         word.addWord("Hi");
         word.addWord("Along");
-
-
         String frequentWord = word.getMostFrequentWord();
 
         assertEquals("",frequentWord);
+    }
 
+    @Test
+    public void toStringTest(){
+        word.addWord("Hi, how are you?");
+        word.addWord("Hi, how are you?");
+        word.addWord("Hi, how are you?");
+        word.addWord("Hi");
+        word.addWord("Hi, how are you?");
+        word.addWord("Hi");
+        word.addWord("Hi");
+        word.addWord("Hi, how are you?");
+        word.addWord("Hi");
+        word.addWord("Along");
+
+       word.printWordsFrequency();
+
+       assertEquals("UniqueWordCounter{map={Hi=4, Hi, how are you?=5, Along=1}}", word.toString());
     }
 }
