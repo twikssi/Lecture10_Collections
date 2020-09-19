@@ -9,23 +9,19 @@ public class UniqueWordVocabularyTest {
     @Test
     public void addWord(){
         UniqueWordVocabulary uniqueWordVocabulary = new UniqueWordVocabulary();
-        String word = "Peter";
+        String word = "Peter hi what`s up";
         uniqueWordVocabulary.addWord(word);
-        uniqueWordVocabulary.addWord("hi");
-        uniqueWordVocabulary.addWord("what`s up?");
 
         assertTrue(uniqueWordVocabulary.getSet().contains("Peter"));
         assertTrue(uniqueWordVocabulary.getSet().contains("hi"));
-        assertTrue(uniqueWordVocabulary.getSet().contains("what`s up?"));
+        assertTrue(uniqueWordVocabulary.getSet().contains("what`s"));
+        assertTrue(uniqueWordVocabulary.getSet().contains("up"));
     }
 
     @Test
     public void addWordNoRepeat(){
         UniqueWordVocabulary uniqueWordVocabulary = new UniqueWordVocabulary();
-        String word = "Peter";
-        uniqueWordVocabulary.addWord(word);
-        uniqueWordVocabulary.addWord(word);
-        uniqueWordVocabulary.addWord(word);
+        String word = "Peter Peter Peter Peter";
         uniqueWordVocabulary.addWord(word);
 
         assertEquals(1,uniqueWordVocabulary.getSet().size());
@@ -36,9 +32,8 @@ public class UniqueWordVocabularyTest {
         UniqueWordVocabulary uniqueWordVocabulary = new UniqueWordVocabulary();
         String word = null;
         uniqueWordVocabulary.addWord(word);
-        uniqueWordVocabulary.addWord("");
 
-        assertEquals(0, uniqueWordVocabulary.getSet().size());
+        assertEquals(true, uniqueWordVocabulary.getSet() == null);
     }
 
     @Test
@@ -46,6 +41,7 @@ public class UniqueWordVocabularyTest {
         UniqueWordVocabulary uniqueWordVocabulary = new UniqueWordVocabulary();
         uniqueWordVocabulary.addWord("");
 
-        assertEquals(0, uniqueWordVocabulary.getSet().size());
+        assertEquals(true, uniqueWordVocabulary.getSet() == null);
     }
+
 }
