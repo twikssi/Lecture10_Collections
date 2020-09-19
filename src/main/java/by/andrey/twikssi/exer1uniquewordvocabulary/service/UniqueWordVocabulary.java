@@ -8,7 +8,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class UniqueWordVocabulary {
-    public static Logger log = LoggerFactory.getLogger(UniqueWordVocabulary.class);
+    public static final Logger log = LoggerFactory.getLogger(UniqueWordVocabulary.class);
     private Set<String> set;
 
     public Set<String> getSet() {
@@ -36,6 +36,6 @@ public class UniqueWordVocabulary {
     }
 
     public void printVocabulary(){
-        log.info(toString());
+        log.info("{}",toString());
     }
 }
