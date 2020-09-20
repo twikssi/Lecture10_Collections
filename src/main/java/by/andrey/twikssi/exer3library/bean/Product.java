@@ -1,43 +1,44 @@
 package by.andrey.twikssi.exer3library.bean;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
-public class Book {
-    private final String name;
-    private final String author;
+public class Product {
+    private String name;
+    private BigDecimal price;
 
-    public Book(String name, String author) {
+    public Product(String name, BigDecimal price) {
         this.name = name;
-        this.author = author;
+        this.price = price;
     }
 
     public String getName() {
         return name;
     }
 
-    public String getAuthor() {
-        return author;
+    public BigDecimal getPrice() {
+        return price;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Book book = (Book) o;
-        return Objects.equals(name, book.name) &&
-                Objects.equals(author, book.author);
+        Product product = (Product) o;
+        return Objects.equals(name, product.name) &&
+                Objects.equals(price, product.price);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, author);
+        return Objects.hash(name, price);
     }
 
     @Override
     public String toString() {
-        return "Book{" +
+        return "Product{" +
                 "name='" + name + '\'' +
-                ", author='" + author + '\'' +
+                ", price=" + price +
                 '}';
     }
 }
