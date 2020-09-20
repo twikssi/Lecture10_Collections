@@ -50,4 +50,50 @@ public class LibraryTest {
 
         assertEquals(life, library.getLibrary().get(2));
     }
+
+    @Test
+    public void findOutBookWithName() {
+        library.addBook(gameOf);
+        library.addBook(breakfast);
+        library.addBook(catcher);
+        library.addBook(life);
+        library.addBook(new Book("BelarussianFreedomBook","Herski"));
+
+        assertEquals("The Catcher on the Rue",library.findOutBookWithName("the catcher on the Rue").getName());
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void findOutBookWithNameReturnNull() {
+        library.addBook(gameOf);
+        library.addBook(breakfast);
+        library.addBook(catcher);
+        library.addBook(life);
+        library.addBook(new Book("BelarussianFreedomBook","Herski"));
+        library.findOutBookWithName("Dranker").getName();
+    }
+
+    @Test
+    public void getAllBooksWithAuthor() {
+        library.addBook(gameOf);
+        library.addBook(breakfast);
+        library.addBook(catcher);
+        library.addBook(life);
+        library.addBook(new Book("BelarussianFreedomBook","Herski"));
+        library.addBook(new Book("Nine stories","sellinger"));
+
+        assertEquals("[Book{name='The Catcher on the Rue', author='Sellinger'}, Book{name='Nine stories', author='sellinger'}]",
+                library.getAllBooksWithAuthor("sellinger").toString());
+    }
+
+    @Test
+    public void getAllBooksWithAuthorReturnSizeZero() {
+        library.addBook(gameOf);
+        library.addBook(breakfast);
+        library.addBook(catcher);
+        library.addBook(life);
+        library.addBook(new Book("BelarussianFreedomBook","Herski"));
+        library.addBook(new Book("Nine stories","sellinger"));
+
+        assertEquals(0,library.getAllBooksWithAuthor("Peppa Pig").size());
+    }
 }
