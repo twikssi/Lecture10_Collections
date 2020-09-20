@@ -43,7 +43,7 @@ public class ShopTest {
         shop.deleteProduct(bear);
 
         for (Product product: shop.getListProducts()){
-            assertFalse(product.equals(bear));
+            assertNotEquals(product,bear);
         }
     }
 
