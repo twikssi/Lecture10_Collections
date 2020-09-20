@@ -2,6 +2,7 @@ package by.andrey.twikssi.exer3library.service;
 
 import by.andrey.twikssi.exer3library.bean.Product;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,5 +36,15 @@ public class Shop {
             }
         }
         return null;
+    }
+
+    public List<Product> findProduct(BigDecimal minPriceRange, BigDecimal maxPriceRange){
+        List<Product> listWithRangeProducts = new ArrayList<>();
+        for(Product product:listProducts){
+            if(product.getPrice().doubleValue() > minPriceRange.doubleValue() && product.getPrice().doubleValue() < maxPriceRange.doubleValue()){
+                listWithRangeProducts.add(product);
+            }
+        }
+        return listWithRangeProducts;
     }
 }

@@ -53,4 +53,9 @@ public class ShopTest {
 
         assertEquals(bear, shop.findOutProductWithName("bear"));
     }
+
+    @Test
+    public void findProduct() {
+        assertEquals(3,shop.findProduct(new BigDecimal(20), new BigDecimal(90)).size());
+    }
 }
