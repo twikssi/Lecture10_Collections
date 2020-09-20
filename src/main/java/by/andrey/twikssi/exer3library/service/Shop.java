@@ -6,21 +6,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Shop {
-    private List<Product> shopProducts;
+    private List<Product> listProducts;
 
     public Shop() {
-        shopProducts = new ArrayList<>();
+        listProducts = new ArrayList<>();
     }
 
     public Shop(List<Product> products) {
-        this.shopProducts = products;
+        this.listProducts = products;
     }
 
-    public List<Product> getShopProducts() {
-        return shopProducts;
+    public List<Product> getListProducts() {
+        return listProducts;
     }
 
     public void addProduct(Product product){
-        shopProducts.add(product);
+        listProducts.add(product);
     }
 }
