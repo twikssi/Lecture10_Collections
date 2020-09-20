@@ -23,4 +23,8 @@ public class Shop {
     public void addProduct(Product product){
         listProducts.add(product);
     }
+
+    public void deleteProduct(Product product){
+        listProducts.remove(product);
+    }
 }

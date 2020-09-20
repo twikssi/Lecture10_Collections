@@ -36,4 +36,14 @@ public class ShopTest {
         assertEquals(8, shop.getListProducts().size());
         assertEquals("Iphon 100000",shop.getListProducts().get(6).getName());
     }
+
+    @Test
+    public void deleteProduct() {
+        Product bear = new Product("Bear", new BigDecimal(24.45));
+        shop.deleteProduct(bear);
+
+        for (Product product: shop.getListProducts()){
+            assertFalse(product.equals(bear));
+        }
+    }
 }
