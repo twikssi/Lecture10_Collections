@@ -31,9 +31,9 @@ public class LibraryTest {
         library.addBook(life);
         library.addBook(new Book("BelarussianFreedomBook","Herski"));
 
-        assertEquals(catcher, library.getLibrary().get(2));
-        assertEquals("BelarussianFreedomBook", library.getLibrary().get(4).getName());
-        assertEquals("Capote",library.getLibrary().get(1).getAuthor());
+        assertEquals(catcher, library.getBooksLibrary().get(2));
+        assertEquals("BelarussianFreedomBook", library.getBooksLibrary().get(4).getName());
+        assertEquals("Capote",library.getBooksLibrary().get(1).getAuthor());
     }
 
     @Test
@@ -48,7 +48,7 @@ public class LibraryTest {
 
         library.deleteBook(bookDelete);
 
-        assertEquals(life, library.getLibrary().get(2));
+        assertEquals(life, library.getBooksLibrary().get(2));
     }
 
     @Test

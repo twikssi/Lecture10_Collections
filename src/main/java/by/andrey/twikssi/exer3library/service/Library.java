@@ -1,46 +1,44 @@
 package by.andrey.twikssi.exer3library.service;
 
 import by.andrey.twikssi.exer3library.bean.Book;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Library {
-    private List<Book> library;
-    public static final Logger log = LoggerFactory.getLogger(Library.class);
+    private List<Book> booksLibrary;
 
     public Library() {
-        this.library =new ArrayList<>();
+        this.booksLibrary =new ArrayList<>();
     }
 
-    public List<Book> getLibrary() {
-        return library;
+    public List<Book> getBooksLibrary() {
+        return booksLibrary;
     }
 
     public void addBook(Book book){
-        library.add(book);
+        booksLibrary.add(book);
     }
 
     public void deleteBook(Book book){
-        library.remove(book);
+        booksLibrary.remove(book);
     }
 
     public Book findOutBookWithName(String name){
-        for (Book book:library){
-            if (book.getName().toLowerCase().equals(name.toLowerCase())){
+        for (Book book: booksLibrary){
+            if (book.getName().equalsIgnoreCase(name)){
                 return book;
             }
         }
+        ("look").equalsIgnoreCase("LOOK");
         return null;
     }
 
     public List<Book> getAllBooksWithAuthor(String author){
         List<Book> oneAuthorHasBooks = new ArrayList<>();
 
-        for(Book book:library){
-            if (book.getAuthor().toLowerCase().equals(author.toLowerCase())){
+        for(Book book: booksLibrary){
+            if (book.getAuthor().equalsIgnoreCase(author)){
                 oneAuthorHasBooks.add(book);
             }
         }
@@ -51,7 +49,7 @@ public class Library {
     @Override
     public String toString() {
         return "Library{" +
-                "library=" + library +
+                "library=" + booksLibrary +
                 '}';
     }
 }
