@@ -46,4 +46,11 @@ public class ShopTest {
             assertFalse(product.equals(bear));
         }
     }
+
+    @Test
+    public void findOutProductWithName() {
+        Product bear = new Product("Bear", new BigDecimal(24.45));
+
+        assertEquals(bear, shop.findOutProductWithName("bear"));
+    }
 }

@@ -27,4 +27,13 @@ public class Shop {
     public void deleteProduct(Product product){
         listProducts.remove(product);
     }
+
+    public Product findOutProductWithName(String name){
+        for(Product product:listProducts){
+            if(product.getName().equalsIgnoreCase(name)){
+                return product;
+            }
+        }
+        return null;
+    }
 }
